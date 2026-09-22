@@ -1,0 +1,13 @@
+/* Sets CSS variables for main website colors to be easily changed */
+:root {
+    --background: #0f172a;
+    --surface: #1e293b;
+    --text-primary: #f8fafc;
+    --text-secondary: #cbd5e1;
+    --accent: #38bdf8;
+}
+
+body {
+    background-color: var(--background);
+    color: var(--text-primary);
+}
