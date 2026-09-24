@@ -64,14 +64,14 @@
 
                 <p>
                     I wrote the C# code myself and built the scene in Unity.
-                    I also handled the placement and organization of the
-                    environment and worked on the overall visual presentation.
+                    I handled the placement and organization of the environment
+                    and worked on the overall visual presentation.
                 </p>
 
                 <p>
-                    The project uses free assets and models that I found online.
-                    I did not create those individual models myself, but I
-                    combined them and arranged them into the environment I wanted.
+                    I used free assets and models that I found online rather
+                    than creating the individual 3D models myself. I combined
+                    and arranged those assets to create the finished environment.
                 </p>
             </div>
 
@@ -82,7 +82,7 @@
                     <span>C#</span>
                     <span>Unity</span>
                     <span>Visual Studio</span>
-                    <span>3D Environment</span>
+                    <span>3D Environment Design</span>
                 </div>
             </div>
 
@@ -96,8 +96,8 @@
                 </p>
 
                 <p>
-                    It also showed me that I enjoy the combination of technical
-                    work and visual design that comes with game development.
+                    It also helped me realize how much I enjoy combining
+                    programming with the visual and creative side of game development.
                 </p>
             </div>
 
@@ -105,18 +105,47 @@
 
         <section class="code-section">
 
-            <div>
+            <div class="code-intro">
                 <p class="section-label">CODE</p>
                 <h2>Selected code</h2>
 
                 <p>
-                    I'll add code examples from this project here that show
-                    some of the programming work I did.
+                    I wrote C# scripts for player movement and mouse-controlled
+                    camera movement. The main focus of this project was creating
+                    and refining the visual environment in Unity.
                 </p>
             </div>
 
-            <div class="code-placeholder">
-                <p>C# code examples coming soon.</p>
+            <div class="code-examples">
+
+                <div class="code-example">
+                    <h3>Player Movement</h3>
+
+                    <pre><code>float deltaX = Input.GetAxis("Horizontal") * speed;
+float deltaZ = Input.GetAxis("Vertical") * speed;
+
+Vector3 movement = new Vector3(deltaX, 0, deltaZ);
+movement = Vector3.ClampMagnitude(movement, speed);
+
+movement.y = gravity;
+movement *= Time.deltaTime;
+
+charController.Move(movement);</code></pre>
+                </div>
+
+                <div class="code-example">
+                    <h3>Mouse Camera Control</h3>
+
+                    <pre><code>verticalRot -= Input.GetAxis("Mouse Y") * sensitivityVert;
+verticalRot = Mathf.Clamp(verticalRot, minimumVert, maximumVert);
+
+float delta = Input.GetAxis("Mouse X") * sensitivityHor;
+float horizontalRot = transform.localEulerAngles.y + delta;
+
+transform.localEulerAngles =
+    new Vector3(verticalRot, horizontalRot, 0);</code></pre>
+                </div>
+
             </div>
 
         </section>
